@@ -302,28 +302,24 @@ class _ActionButton extends StatelessWidget {
   const _ActionButton({required this.label, required this.color, Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(18),
-        boxShadow: [
-          BoxShadow(
-            color: color.withOpacity(0.18),
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Text(
-        label,
-        style: const TextStyle(
-          color: Colors.white,
+    return ElevatedButton(
+      onPressed: () {}, // TODO: Implement action
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
+        foregroundColor: Colors.white,
+        textStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 13,
           fontFamily: 'Poppins',
         ),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+        ),
+        elevation: 2,
+        shadowColor: color.withOpacity(0.18),
       ),
+      child: Text(label),
     );
   }
 } 
